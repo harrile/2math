@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>math</title>		
+	</head>
+	<style type="text/css">
+		p.big {line-height:85%}
+		table
+		  {
+		  border-collapse:collapse;
+		  }
+
+		table,th, td
+		  {
+		  border: 1px solid black;
+		  }
+	</style>
+	<body>	
+		<script type="text/javascript">
+		function GetRandomNum(Min,Max){   
+			var Range = Max - Min;   
+			var Rand = Math.random();   
+			return(Min + Math.round(Rand * Range));   
+		}
+		function WriteA(themax){
+			var a = GetRandomNum(10,themax);
+			var v = GetRandomNum(0,20);
+			if (v > 10){
+				document.write("&nbsp;",a," + ",GetRandomNum(1,themax-a), " =", '&nbsp;&nbsp;&nbsp;&nbsp;');
+			}else{
+				document.write("&nbsp;",a," - ",GetRandomNum(10,a-1), " =&nbsp;&nbsp;&nbsp;&nbsp;");			
+			}
+			//return 1;
+		}
+		function Write20(){
+			for (var i = 0; i < 20; i++){
+				document.write('<p class="big">');
+				WriteA(100);
+				document.write("</p>");	
+			}	
+		}
+		// 表格
+		document.write('<table border="1px" cellpadding="10" style="border-left:0px;border-right:0px;">');
+		document.write('<tr>');
+		for (var i = 0; i < 6; i++) {
+			document.write('<td>');
+			Write20();
+			document.write('</td>');
+		};
+		document.write('</tr>');
+		document.write('</table>');
+
+		document.write('<br />');
+		document.write('<br />');
+		document.write('<br />');
+
+		document.write('<table border="1px" cellpadding="10" style="border-left:0px;border-right:0px;">');
+		document.write('<tr>');
+		for (var i = 0; i < 6; i++) {
+			document.write('<td>');
+			Write20();
+			document.write('</td>');
+		};
+		document.write('</tr>');
+		document.write('</table>');
+
+		</script>
+	</body>
+</html>
